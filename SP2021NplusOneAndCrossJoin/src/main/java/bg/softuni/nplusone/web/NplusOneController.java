@@ -7,8 +7,6 @@ package bg.softuni.nplusone.web;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -28,7 +26,7 @@ public class NplusOneController {
 		
 	}
 	
-	@Transactional
+//	@Transactional
 	@GetMapping("/nplus1")
 	public String getNplusOne() {
 		
