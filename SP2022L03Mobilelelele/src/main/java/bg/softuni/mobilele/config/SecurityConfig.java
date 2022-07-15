@@ -36,6 +36,7 @@ public class SecurityConfig {
 			.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 			// everyone can login and register
 			.antMatchers("/", "/users/login", "/users/register").permitAll()
+			.antMatchers("/offers/all").permitAll()
 //			// pages available only for moderators
 //			.antMatchers("/pages/moderators").hasRole(UserRoleEnum.MODERATOR.name())
 //			// pages available only for admins

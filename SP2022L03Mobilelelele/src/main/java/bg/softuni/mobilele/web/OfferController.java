@@ -2,6 +2,8 @@ package bg.softuni.mobilele.web;
 
 import javax.validation.Valid;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -31,7 +33,13 @@ public class OfferController {
     }
 
     @GetMapping("/offers/all")
-    public String allOffers() {
+    public String allOffers(
+            Model model,
+            @PageableDefault(
+                page = 0,
+                size = 5) Pageable pageable) {
+
+            model.addAttribute("offers", offerService.getAllOffers(pageable));
         return "offers";
     }
 
