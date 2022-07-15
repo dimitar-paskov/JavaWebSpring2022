@@ -2,7 +2,7 @@
  * @author dimitar
  *
  */
-package bg.softuni.nplusone.repository;
+package bg.softuni.nplusone.repository.nplus1;
 
 import java.util.List;
 

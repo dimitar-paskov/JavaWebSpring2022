@@ -11,8 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import bg.softuni.nplusone.model.nplus1.UserEntity;
-import bg.softuni.nplusone.repository.RoleRepository;
-import bg.softuni.nplusone.repository.UserRepository;
+import bg.softuni.nplusone.repository.nplus1.RoleRepository;
+import bg.softuni.nplusone.repository.nplus1.UserRepository;
 
 @Controller
 public class NplusOneController {

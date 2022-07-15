@@ -2,7 +2,7 @@
  * @author dimitar
  *
  */
-package bg.softuni.nplusone.repository;
+package bg.softuni.nplusone.repository.nplus1;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
