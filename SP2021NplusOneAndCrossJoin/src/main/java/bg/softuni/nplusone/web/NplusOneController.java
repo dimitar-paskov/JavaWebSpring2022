@@ -7,6 +7,8 @@ package bg.softuni.nplusone.web;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -26,13 +28,13 @@ public class NplusOneController {
 		
 	}
 	
-//	@Transactional
+	@Transactional
 	@GetMapping("/nplus1")
 	public String getNplusOne() {
 		
 		System.out.println("----------------------");
-		System.out.println("GET ALL USERS");
-		List<UserEntity> allUsers = userRepository.findAll();
+		System.out.println("GET ALL USERS BY FETCH");
+		List<UserEntity> allUsers = userRepository.getAllUsersByFetch();
 		System.out.println("GET ALL USERs: [" + allUsers.size() + " ]");
 		
 		for (UserEntity user : allUsers) {
