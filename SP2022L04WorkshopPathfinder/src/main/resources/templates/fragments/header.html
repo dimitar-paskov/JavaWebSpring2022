@@ -1,0 +1,5 @@
+<header>
+<!--     <th:block th:include="~{/fragments/guest-nav}" sec:authorize="!isAuthenticated()"/> -->
+    <th:block th:include="~{/fragments/guest-nav}" sec:authorize="isAnonymous()"/>
+    <th:block th:include="~{/fragments/logged-nav}" sec:authorize="isAuthenticated()"/>
+</header>
