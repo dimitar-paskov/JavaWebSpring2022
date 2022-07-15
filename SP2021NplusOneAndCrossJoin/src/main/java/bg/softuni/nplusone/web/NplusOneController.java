@@ -5,6 +5,7 @@
 package bg.softuni.nplusone.web;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -36,8 +37,10 @@ public class NplusOneController {
 		List<UserEntity> allUsers = userRepository.findAll();
 		System.out.println("GET ALL USERs: [" + allUsers.size() + " ]");
 		
-		for (UserEntity userEntity : allUsers) {
-			System.out.println(userEntity.getName());
+		for (UserEntity user : allUsers) {
+			System.out.println("----------------------");
+			System.out.println("USER: " + user.getName());
+			System.out.println("ROLES: " + user.getRoles().stream().map(r->r.getName()).collect(Collectors.joining(", ")));
 		}
 		
 		return "hallo";

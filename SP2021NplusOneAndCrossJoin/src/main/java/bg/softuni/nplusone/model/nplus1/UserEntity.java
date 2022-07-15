@@ -24,7 +24,7 @@ public class UserEntity {
 	
 	private String name;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.LAZY)
 	private List<RoleEntity> roles;
 
 	public Long getId() {
