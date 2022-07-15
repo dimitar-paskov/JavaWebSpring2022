@@ -5,7 +5,6 @@
 package bg.softuni.nplusone;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -73,8 +72,8 @@ public class DBinit implements CommandLineRunner {
 			tag2.setName("tag2"); 
 			tag2 = tagRepository.save(tag2);
 			
-			post.setComments(Set.of(comment1, comment2));
-			post.setTags(Set.of(tag1, tag2));
+			post.setComments(List.of(comment1, comment2));
+			post.setTags(List.of(tag1, tag2));
 			
 			postRepository.save(post);
 					

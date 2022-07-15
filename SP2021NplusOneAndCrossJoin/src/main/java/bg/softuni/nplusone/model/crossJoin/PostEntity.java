@@ -4,8 +4,8 @@
  */
 package bg.softuni.nplusone.model.crossJoin;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,14 +26,14 @@ public class PostEntity {
 	
 	private String post;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "post_id")
-	private Set<CommentEntity> comments= new HashSet<>();
+	private List<CommentEntity> comments= new ArrayList<>();
 	
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "post_id")
-	private Set<TagEntity> tags= new HashSet<>();
+	private List<TagEntity> tags= new ArrayList<>();
 
 
 	public Long getId() {
@@ -56,22 +56,22 @@ public class PostEntity {
 	}
 
 
-	public Set<CommentEntity> getComments() {
+	public List<CommentEntity> getComments() {
 		return comments;
 	}
 
 
-	public void setComments(Set<CommentEntity> comments) {
+	public void setComments(List<CommentEntity> comments) {
 		this.comments = comments;
 	}
 
 
-	public Set<TagEntity> getTags() {
+	public List<TagEntity> getTags() {
 		return tags;
 	}
 
 
-	public void setTags(Set<TagEntity> tags) {
+	public void setTags(List<TagEntity> tags) {
 		this.tags = tags;
 	}
 	

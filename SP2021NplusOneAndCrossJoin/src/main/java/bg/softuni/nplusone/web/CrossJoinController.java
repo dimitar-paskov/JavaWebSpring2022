@@ -6,6 +6,8 @@ package bg.softuni.nplusone.web;
 
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -24,6 +26,7 @@ public class CrossJoinController {
 		// TODO Auto-generated constructor stub
 	}
 	
+	@Transactional
 	@GetMapping("/test-cross")
 	public String testCross() {
 		
