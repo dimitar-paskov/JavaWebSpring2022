@@ -12,8 +12,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
 import javax.persistence.Table;
 
+@NamedEntityGraph(name = "user-roles", attributeNodes = {
+		@NamedAttributeNode("roles")
+})
 @Entity
 @Table(name="user")
 public class UserEntity {

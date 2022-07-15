@@ -33,8 +33,8 @@ public class NplusOneController {
 	public String getNplusOne() {
 		
 		System.out.println("----------------------");
-		System.out.println("GET ALL USERS BY FETCH");
-		List<UserEntity> allUsers = userRepository.getAllUsersByFetch();
+		System.out.println("GET ALL USERS BY ENTITY GRAPH");
+		List<UserEntity> allUsers = userRepository.getAllUsersByEntityGraph(); 
 		System.out.println("GET ALL USERs: [" + allUsers.size() + " ]");
 		
 		for (UserEntity user : allUsers) {
