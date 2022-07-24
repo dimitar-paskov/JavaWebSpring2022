@@ -1,8 +1,11 @@
 package bg.softuni.mobilele.web;
 
+import java.util.UUID;
+
 import javax.validation.Valid;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,6 +39,8 @@ public class OfferController {
     public String allOffers(
             Model model,
             @PageableDefault(
+            	sort = "price",
+            	direction = Sort.Direction.ASC,
                 page = 0,
                 size = 5) Pageable pageable) {
 
@@ -101,11 +106,16 @@ public class OfferController {
         return "offer-search";
     }
 
-    //TODO: Имаш бонус работещо DTO - CardListingDTO със настроен mapper за offer catalogue
 
     @ModelAttribute(name = "searchOfferModel")
     private SearchOfferDTO initSearchModel() {
         return new SearchOfferDTO();
     }
+    
+    @GetMapping("/offers/{id}/details")
+    public String getOfferDetail(@PathVariable("id") UUID id) {
+    	return "details";
+    }
+    
 
 }

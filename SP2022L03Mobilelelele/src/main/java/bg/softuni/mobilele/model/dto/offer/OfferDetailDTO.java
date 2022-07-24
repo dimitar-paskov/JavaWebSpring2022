@@ -1,11 +1,14 @@
 package bg.softuni.mobilele.model.dto.offer;
 
+import java.math.BigDecimal;
+import java.util.UUID;
+
 import bg.softuni.mobilele.model.enums.EngineEnum;
 import bg.softuni.mobilele.model.enums.TransmissionEnum;
 
-import java.math.BigDecimal;
-
 public class OfferDetailDTO {
+	
+	private UUID id;
     private String imageUrl;
     private Integer year;
     private String brand;
@@ -85,4 +88,14 @@ public class OfferDetailDTO {
     public String getOfferHighlight() {
         return this.year + " " + this.brand + " " + this.model;
     }
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+    
+    
 }

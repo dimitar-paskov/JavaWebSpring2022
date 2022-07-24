@@ -1,5 +1,7 @@
 package bg.softuni.mobilele.service;
 
+import java.util.Locale;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -31,14 +33,14 @@ public class UserService {
 		this.emailService = emailService;
 	}
 
-	public void registerAndLogin(UserRegisterDTO userRegisterDTO) {
+	public void registerAndLogin(UserRegisterDTO userRegisterDTO, Locale preferredLocale) {
 
 		UserEntity newUser = userMapper.userDtoToUserEntity(userRegisterDTO);
 		newUser.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
 
 		this.userRepository.save(newUser);
 		login(newUser);
-		emailService.sendRegistrationEmail(newUser.getEmail(), newUser.getFirstName() + " " + newUser.getLastName());
+		emailService.sendRegistrationEmail(newUser.getEmail(), newUser.getFirstName() + " " + newUser.getLastName(),preferredLocale);
 	}
 
 	private void login(UserEntity userEntity) {
