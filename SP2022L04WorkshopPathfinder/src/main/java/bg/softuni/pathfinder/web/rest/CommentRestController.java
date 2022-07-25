@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import bg.softuni.pathfinder.exceptions.RouteNotFoundException;
 import bg.softuni.pathfinder.model.dto.CommentCreationDto;
 import bg.softuni.pathfinder.model.dto.CommentMessageDto;
 import bg.softuni.pathfinder.model.views.CommentDisplayView;
@@ -59,5 +61,39 @@ public class CommentRestController {
 				.body(comment);
 		
 	}
+	
+	 @ExceptionHandler({RouteNotFoundException.class})
+	    public ResponseEntity<ErrorApiResponse> handleRouteNotFound() {
+	        return ResponseEntity.status(404).body(new ErrorApiResponse("Such route doesn't exist!", 1004));
+	    }
 
+}
+
+class ErrorApiResponse {
+    private String message;
+    private Integer errorCode;
+
+    public ErrorApiResponse(String message, Integer errorCode) {
+        this.message = message;
+        this.errorCode = errorCode;
+    }
+
+    public ErrorApiResponse() {
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Integer getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(Integer errorCode) {
+        this.errorCode = errorCode;
+    }
 }

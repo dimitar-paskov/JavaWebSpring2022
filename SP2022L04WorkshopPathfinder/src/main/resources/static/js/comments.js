@@ -17,7 +17,7 @@ async function handleFormSubmission(event){
         method: "POST",
         headers:{
             'Content-Type': 'application/json',
-            'Accepts': 'application/json',
+            'Accept': 'application/json',
             [csrfHeaderName]:csrfHeaderValue
 
         },

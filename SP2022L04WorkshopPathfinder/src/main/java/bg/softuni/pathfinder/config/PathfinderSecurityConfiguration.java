@@ -25,9 +25,9 @@ public class PathfinderSecurityConfiguration {
 		
 		 http.authorizeRequests()
 		.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-		.antMatchers("/", "/routes/**").permitAll()
+		.antMatchers("/", "/routes/**", "/api/**").permitAll()
 		.antMatchers("/users/login", "/users/register").anonymous()
-		.antMatchers("/users/profile", "/api/**").authenticated()
+		.antMatchers("/users/profile").authenticated()
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()
