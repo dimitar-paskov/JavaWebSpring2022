@@ -12,7 +12,7 @@ public class PathfinderControllerAdvice {
 	
 	@ExceptionHandler({Exception.class})
 	public String handleError() {
-		return "error";
+		return "redirect:error";
 	}
 
 }
