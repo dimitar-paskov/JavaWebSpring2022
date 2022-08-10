@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+	//id 'eclipse'
+
+}
+
+group = 'bg.softuni'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+	
+	// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+	testImplementation 'org.seleniumhq.selenium:selenium-java:4.2.1'
+	testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.2.1'
+	
+
+	
+}
+
+test {
+	useJUnitPlatform()
+}
