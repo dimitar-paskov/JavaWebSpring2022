@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:testdb;sql.syntax_mys=true;DB_CLOSE_DELAY=-1
+    username: sa
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: never
+      
+mail:
+  host: "localhost"
+  port: 1025
+  username: "mobilele@mobilele.com"
+  password: "topsecret"
+
+  
+#  spring.datasource.driver-class-name=org.hsqldb.jdbc.JDBCDriver
+#spring.datasource.url=jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1
+#spring.datasource.username=sa
+#spring.datasource.password=
+#spring.jpa.hibernate.ddl-auto=create
