@@ -26,7 +26,7 @@ import com.icegreen.greenmail.util.ServerSetup;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class UserRegistrationControllerZGreenMailIT {
+public class UserRegistrationControllerGreenMailIT {
 	
 	@Value("${mail.host}") 
 	private String mailHost;

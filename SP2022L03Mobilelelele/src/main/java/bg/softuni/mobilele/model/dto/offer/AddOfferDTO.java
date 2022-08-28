@@ -7,14 +7,19 @@ import javax.validation.constraints.Positive;
 
 import bg.softuni.mobilele.model.enums.EngineEnum;
 import bg.softuni.mobilele.model.enums.TransmissionEnum;
+import bg.softuni.mobilele.model.validation.ValueOfEnum;
 
 public class AddOfferDTO {
 
   @NotNull
   @Min(1)
   private Long modelId;
-  @NotNull
-  private EngineEnum engine;
+  
+  @NotEmpty
+  @ValueOfEnum(enumClass = EngineEnum.class, 
+  message = "must be any of GASOLINE, DIESEL, ELECTRIC, HYBRID")
+  private String engine;
+
 
   @Positive
   @NotNull
@@ -37,11 +42,11 @@ public class AddOfferDTO {
   @NotEmpty
   private String imageUrl;
 
-  public EngineEnum getEngine() {
+  public String getEngine() {
     return engine;
   }
 
-  public AddOfferDTO setEngine(EngineEnum engine) {
+  public AddOfferDTO setEngine(String engine) {
     this.engine = engine;
     return this;
   }

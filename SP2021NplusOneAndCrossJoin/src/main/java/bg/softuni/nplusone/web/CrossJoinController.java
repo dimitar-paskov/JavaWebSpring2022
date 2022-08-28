@@ -23,7 +23,6 @@ public class CrossJoinController {
 
 	public CrossJoinController(PostRepository postRepository) {
 		this.postRepository = postRepository;
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Transactional

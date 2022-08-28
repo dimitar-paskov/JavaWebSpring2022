@@ -46,7 +46,6 @@ public class EmailService {
 			
 			javaMailSender.send(mimeMessageHelper.getMimeMessage()); 
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new RuntimeException();
 		} 

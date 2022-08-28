@@ -1,9 +1,9 @@
 spring:
-  datasource:
-    driver-class-name: org.hsqldb.jdbc.JDBCDriver
-    url: jdbc:hsqldb:mem:testdb;sql.syntax_mys=true;DB_CLOSE_DELAY=-1
-    username: sa
-    password: 
+#  datasource:
+#    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+#    url: jdbc:hsqldb:mem:testdb;sql.syntax_mys=true;DB_CLOSE_DELAY=-1
+#    username: sa
+#    password: 
   jpa:
     hibernate:
       ddl-auto: update

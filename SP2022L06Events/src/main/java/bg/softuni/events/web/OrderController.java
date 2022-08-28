@@ -16,7 +16,6 @@ public class OrderController {
 
 	public OrderController(OrderService orderService) {
 		this.orderService = orderService;
-		// TODO Auto-generated constructor stub
 	}
 	
 	@GetMapping("/dummy/order/create")

@@ -19,7 +19,6 @@ public class OrderService {
 	
 	public OrderService(ApplicationEventPublisher applicationEventPublisher) {
 		this.applicationEventPublisher = applicationEventPublisher;
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void createOrder(String productId, int quantity) {

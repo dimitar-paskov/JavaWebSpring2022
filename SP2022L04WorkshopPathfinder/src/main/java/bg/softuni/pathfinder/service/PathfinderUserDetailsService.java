@@ -20,7 +20,6 @@ public class PathfinderUserDetailsService implements UserDetailsService{
 
 	public PathfinderUserDetailsService(UserRepository userRepository ) {
 		this.userRepository = userRepository;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

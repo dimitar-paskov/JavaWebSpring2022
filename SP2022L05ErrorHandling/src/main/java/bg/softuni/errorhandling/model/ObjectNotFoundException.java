@@ -15,7 +15,6 @@ public class ObjectNotFoundException extends RuntimeException{
 
 	public ObjectNotFoundException(Long objectId) {
 		this.objectId = objectId;
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Long getObjectId() {
