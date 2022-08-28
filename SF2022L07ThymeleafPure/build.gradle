@@ -1,0 +1,23 @@
+plugins {	
+	id 'java'
+	id 'eclipse'
+}
+
+group = 'bg.softuni'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
+	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+	useJUnitPlatform()
+}
